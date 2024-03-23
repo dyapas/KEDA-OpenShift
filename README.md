@@ -13,5 +13,8 @@
 - Dynatrace Trial: https://bit.ly/3KxWDvY
 - Blog : https://isitobservable.io
 
+#### KEDA Examples - Use cases
+- https://doc.kaas.thalesdigital.io/docs/Features/keda
+
 ### Keda-OpenShift
 1. https://www.redhat.com/en/blog/custom-metrics-autoscaler-on-openshift
