@@ -1,0 +1,40 @@
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: amq-broker
+  namespace: ex-aao
+spec:
+  acceptors:
+    - expose: true
+      name: all-ssl
+      port: 61617
+      protocols: 'AMQP,CORE,HORNETQ,MQTT,STOMP'
+      sslEnabled: true
+      sslSecret: amq-tls-acceptor
+    - name: scaleDown
+      port: 61616
+      protocols: 'core,amqp'
+  adminPassword: amqpwd
+  adminUser: amquser
+  brokerProperties:
+    - globalMaxSize=2g
+  console:
+    expose: true
+    sslEnabled: false
+ #   sslSecret: amq-tls
+  deploymentPlan:
+    size: 1
+    persistenceEnabled: false
+    requireLogin: true
+    resources:
+      limits:
+        cpu: 400m
+        memory: 2Gi
+      requests:
+        cpu: 50m
+        memory: 700Mi
+    messageMigration: false
+    managementRBACEnabled: true
+    journalType: nio
+    jolokiaAgentEnabled: false
+    image: placeholder
