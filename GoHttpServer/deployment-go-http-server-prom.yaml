@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: go-http-server-prom
+  name: go-http-server-prom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-http-server-prom
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: go-http-server-prom
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+      - image: quay.io/dyapas325/keda/go-http-server:prom-01
+        imagePullPolicy: IfNotPresent
+        name: go-http-server
+        ports:
+        - containerPort: 8080
+          name: http-metrics
+        resources: {}
