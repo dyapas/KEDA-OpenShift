@@ -4,6 +4,7 @@ metadata:
   labels:
     app: go-http-server-prom
   name: go-http-server-prom
+  namespace: keda-demo
 spec:
   replicas: 1
   selector:
