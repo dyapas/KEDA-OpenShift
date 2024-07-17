@@ -1,5 +1,8 @@
 # KEDA-OpenShift
 
+## KEDA
+KEDA (Kubernetes Event-Driven Autoscaling), which extends the capabilities of HPA with custom metrics, providing additional features like event-driven scaling and scale-to-zero functionality.
+
 ## Resources:
 
 ### KEDA
